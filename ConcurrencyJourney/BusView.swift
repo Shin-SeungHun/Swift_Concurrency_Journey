@@ -27,6 +27,23 @@ class BusManager {
             return .failure(URLError(.unknown))
         }
     }
+    
+    /// throw
+    func changeDisplay3() throws -> String {
+        if isActive {
+            return "버스가 출발합니다"
+        } else {
+            throw URLError(.unknown)
+        }
+    }
+    
+    func changeDisplay4() throws -> String {
+        if isActive {
+            return "버스가 출발합니다"
+        } else {
+            throw URLError(.unknown)
+        }
+    }
 }
 
 
@@ -44,6 +61,7 @@ class BusViewModel: ObservableObject {
         }
         */
         
+        /*
         let result = manager.changeDisplay2()
         
         switch result {
@@ -52,6 +70,21 @@ class BusViewModel: ObservableObject {
         case .failure(let error):
             self.display = error.localizedDescription
         }
+        */
+        
+        // do catch
+        do {
+            let newDisplay = try manager.changeDisplay3()
+            self.display = newDisplay
+            
+            let finalDisplay = try manager.changeDisplay4()
+            self.display = finalDisplay
+        } catch let error { // let error 생략가능
+            self.display = error.localizedDescription
+        }
+        
+        
+        
     }
 }
 
