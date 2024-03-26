@@ -52,6 +52,7 @@ class BusViewModel: ObservableObject {
     let manager = BusManager()
     
     func driving() {
+        // tuple
         /*
         let returnedValue = manager.changeDisplay()
         if let newDisplay = returnedValue.title {
@@ -61,6 +62,7 @@ class BusViewModel: ObservableObject {
         }
         */
         
+        // Result
         /*
         let result = manager.changeDisplay2()
         
@@ -73,6 +75,7 @@ class BusViewModel: ObservableObject {
         */
         
         // do catch
+        /*
         do {
             let newDisplay = try manager.changeDisplay3()
             self.display = newDisplay
@@ -82,8 +85,20 @@ class BusViewModel: ObservableObject {
         } catch let error { // let error 생략가능
             self.display = error.localizedDescription
         }
+        */
         
-        
+        // try?
+        do {
+            let newDisplay = try? manager.changeDisplay3()
+            if let newDisplay = newDisplay {
+                self.display = newDisplay
+            } 
+            
+            let finalDisplay = try manager.changeDisplay4()
+                self.display = finalDisplay
+        } catch {
+            self.display = error.localizedDescription
+        }
         
     }
 }
