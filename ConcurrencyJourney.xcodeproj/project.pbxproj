@@ -11,6 +11,7 @@
 		4CFB60622BB2C943005D1931 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB60612BB2C943005D1931 /* ContentView.swift */; };
 		4CFB60642BB2C947005D1931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFB60632BB2C947005D1931 /* Assets.xcassets */; };
 		4CFB60672BB2C947005D1931 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFB60662BB2C947005D1931 /* Preview Assets.xcassets */; };
+		4CFB606E2BB2CA07005D1931 /* BusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB606D2BB2CA07005D1931 /* BusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		4CFB60612BB2C943005D1931 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4CFB60632BB2C947005D1931 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CFB60662BB2C947005D1931 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4CFB606D2BB2CA07005D1931 /* BusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				4CFB605F2BB2C943005D1931 /* ConcurrencyJourneyApp.swift */,
 				4CFB60612BB2C943005D1931 /* ContentView.swift */,
+				4CFB606D2BB2CA07005D1931 /* BusView.swift */,
 				4CFB60632BB2C947005D1931 /* Assets.xcassets */,
 				4CFB60652BB2C947005D1931 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFB606E2BB2CA07005D1931 /* BusView.swift in Sources */,
 				4CFB60622BB2C943005D1931 /* ContentView.swift in Sources */,
 				4CFB60602BB2C943005D1931 /* ConcurrencyJourneyApp.swift in Sources */,
 			);
