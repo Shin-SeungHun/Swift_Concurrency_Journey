@@ -44,6 +44,14 @@ class BusManager {
             throw URLError(.unknown)
         }
     }
+    
+    func changeDisplayWithError() throws -> String {
+        if isActive {
+            return "버스가 출발합니다"
+        } else {
+            throw DisplayError.notDriveTime
+        }
+    }
 }
 
 
@@ -101,16 +109,30 @@ class BusViewModel: ObservableObject {
         }
         
     }
+    
+    func drivingReally() throws {
+        self.display = try manager.changeDisplayWithError()
+    }
 }
 
 struct BusView: View {
     @StateObject private var viewModel = BusViewModel()
+    @State private var errorWrapper: ErrorWrapper?
+    
     var body: some View {
         Text(viewModel.display)
             .font(.largeTitle)
             .bold()
             .onTapGesture {
-                viewModel.driving()
+                do{
+                    try viewModel.drivingReally()
+                } catch {
+                    errorWrapper = ErrorWrapper(error: error, guidance: "버스 운행시간이 아닙니다")
+                }
+              
+            }
+            .sheet(item: $errorWrapper) { wrapper in
+                    ErrorView(errorWrapper: wrapper)
             }
     }
 }
