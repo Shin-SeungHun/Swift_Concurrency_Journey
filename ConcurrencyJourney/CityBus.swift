@@ -33,16 +33,12 @@ class CityBusViewModel: ObservableObject {
     
     private let busManager = CityBusManager()
     
-    func busManagerImage() {
+    func fetchPassengerImage() {
         busManager.downloadWithEscaping { [weak self] passenger, error in
             DispatchQueue.main.async {
                 self?.passenger = passenger
             }
         }
-    }
-    
-    func fetchPassengerImage() {
-        
     }
 }
 
