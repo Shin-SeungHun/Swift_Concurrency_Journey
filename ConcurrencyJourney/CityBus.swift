@@ -25,20 +25,35 @@ class CityBusManager {
         }
         .resume()
     }
+    
+    func downloadWithAsync() async throws -> UIImage? {
+    
+         let (data, response) = try await URLSession.shared.data(from: ticket)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+        
+        return UIImage(data: data)
+        
+    }
 }
 
-
+@MainActor
 class CityBusViewModel: ObservableObject {
     @Published var passenger: UIImage?
     
     private let busManager = CityBusManager()
     
-    func fetchPassengerImage() {
-        busManager.downloadWithEscaping { [weak self] passenger, error in
-            DispatchQueue.main.async {
-                self?.passenger = passenger
-            }
-        }
+    func fetchPassengerImage() async {
+        //        busManager.downloadWithEscaping { [weak self] passenger, error in
+        //            DispatchQueue.main.async {
+        //                self?.passenger = passenger
+        //            }
+        //        }
+            
+       let newPassenger = try? await busManager.downloadWithAsync()
+        
+       self.passenger = newPassenger
     }
 }
 
@@ -54,6 +69,17 @@ struct CityBus: View {
                     .frame(width: 250, height: 250)
                     .cornerRadius(10)
             }
+            
+            Button("승객 태우기") {
+                Task {
+                    await viewModel.fetchPassengerImage()
+                }
+            }
+            .font(.largeTitle)
+            .padding()
+            .foregroundColor(.white)
+            .background(.blue)
+            .cornerRadius(10)
         }
     }
 }
