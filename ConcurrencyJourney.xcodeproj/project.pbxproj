@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C6899F02BB3D51C0057CB77 /* CityBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6899EF2BB3D51B0057CB77 /* CityBus.swift */; };
 		4CFB60602BB2C943005D1931 /* ConcurrencyJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB605F2BB2C943005D1931 /* ConcurrencyJourneyApp.swift */; };
 		4CFB60622BB2C943005D1931 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB60612BB2C943005D1931 /* ContentView.swift */; };
 		4CFB60642BB2C947005D1931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CFB60632BB2C947005D1931 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C6899EF2BB3D51B0057CB77 /* CityBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBus.swift; sourceTree = "<group>"; };
 		4CFB605C2BB2C943005D1931 /* ConcurrencyJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcurrencyJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFB605F2BB2C943005D1931 /* ConcurrencyJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyJourneyApp.swift; sourceTree = "<group>"; };
 		4CFB60612BB2C943005D1931 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				4CFB60612BB2C943005D1931 /* ContentView.swift */,
 				4CFB606D2BB2CA07005D1931 /* BusView.swift */,
 				4CFB606F2BB2CF59005D1931 /* ErrorView.swift */,
+				4C6899EF2BB3D51B0057CB77 /* CityBus.swift */,
 				4CFB60632BB2C947005D1931 /* Assets.xcassets */,
 				4CFB60652BB2C947005D1931 /* Preview Content */,
 			);
@@ -147,6 +150,7 @@
 				4CFB60622BB2C943005D1931 /* ContentView.swift in Sources */,
 				4CFB60602BB2C943005D1931 /* ConcurrencyJourneyApp.swift in Sources */,
 				4CFB60702BB2CF59005D1931 /* ErrorView.swift in Sources */,
+				4C6899F02BB3D51C0057CB77 /* CityBus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
